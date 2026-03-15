@@ -4,7 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Up In Smoke — Wahta Mohawk Territory</title>
-  <meta name="description" content="Up In Smoke — Wahta Mohawk Territory's premier smoke shop. Premium tobacco, pipes, vapes, accessories and more.">
+  <meta name="description" content="Up In Smoke — Wahta Mohawk Territory's premier smoke shop. Premium tobacco, pipes, nicotine pouches, accessories and more. Open daily 9–5.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="up%20in%20smoke%20logo.jpg">
+  <link rel="apple-touch-icon" href="up%20in%20smoke%20logo.jpg">
+
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:title"       content="Up In Smoke — Wahta Mohawk Territory">
+  <meta property="og:description" content="Wahta Mohawk Territory's premier smoke shop. Open daily 9–5. 1862 Muskoka Road 38, Bala, ON.">
+  <meta property="og:image"       content="up in smoke logo.jpg">
+  <meta property="og:type"        content="website">
+  <meta name="theme-color"        content="#0C1826">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +40,100 @@
       --font-condensed: 'Barlow Condensed', sans-serif;
       --font-body:      'Barlow', sans-serif;
     }
+
+    /* ── TOPBAR ── */
+    #topbar {
+      background: var(--red);
+      padding: 0.55rem 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 201;
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      font-family: var(--font-condensed);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+    }
+    .topbar-inner a {
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+    .topbar-inner a:hover { opacity: 0.75; }
+    .topbar-dot { opacity: 0.5; }
+    @media (max-width: 600px) {
+      .topbar-dot { display: none; }
+      .topbar-inner { flex-direction: column; gap: 0.2rem; }
+    }
+
+    /* ── FLOATING CALL BUTTON ── */
+    #fab-call {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 300;
+      background: var(--red);
+      color: white;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 28px rgba(200,72,46,0.5);
+      text-decoration: none;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.2s ease, background 0.2s ease;
+      pointer-events: none;
+    }
+    #fab-call.show {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+    #fab-call:hover {
+      background: var(--red-warm);
+      box-shadow: 0 8px 36px rgba(200,72,46,0.65);
+      transform: scale(1.06);
+    }
+    #fab-call:active { transform: scale(0.97); }
+
+    /* ── BACK TO TOP ── */
+    #back-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 5.5rem;
+      z-index: 300;
+      background: var(--navy-lift);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--cream-dim);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease, color 0.2s ease;
+      pointer-events: none;
+      text-decoration: none;
+    }
+    #back-top.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #back-top:hover { background: var(--navy-card); color: white; }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -885,6 +990,17 @@
 </head>
 <body>
 
+<!-- ══ TOPBAR ══ -->
+<div id="topbar" role="banner">
+  <div class="topbar-inner">
+    <span>Open Daily · 9:00 AM – 5:00 PM</span>
+    <span class="topbar-dot">·</span>
+    <span>1862 Muskoka Road 38, Bala, ON</span>
+    <span class="topbar-dot">·</span>
+    <a href="tel:+17057689003">(705) 768-9003</a>
+  </div>
+</div>
+
 <!-- ══ MOBILE DRAWER ══ -->
 <nav id="drawer" role="navigation" aria-label="Mobile navigation">
   <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
@@ -937,7 +1053,7 @@
     >
     <p class="hero-terr">Wahta Mohawk Territory</p>
     <p class="hero-script">Premium Smoke Shop</p>
-    <p class="hero-sub">Tobacco · Pipes · Vapes · Accessories</p>
+    <p class="hero-sub">Tobacco · Pipes · Nicotine Pouches · Accessories</p>
     <div class="hero-btns">
       <a href="#products" class="btn-fill">Browse Products</a>
       <a href="#visit"    class="btn-ghost">Find Us</a>
@@ -964,7 +1080,7 @@
         <div class="section-rule"></div>
       </div>
       <p class="prod-intro reveal d2">
-        Carefully curated products for every preference — from classic tobacco to modern vaping, we've got you covered on Mohawk Territory.
+        Carefully curated products for every preference — from classic tobacco and pipes to nicotine pouches and accessories, we've got you covered on Mohawk Territory.
       </p>
     </div>
 
@@ -1303,8 +1419,33 @@
 
     </div>
 
+    <!-- Google Maps embed -->
+    <div class="reveal" style="margin-top:4rem;position:relative;">
+      <div style="border:1px solid rgba(255,255,255,0.07);overflow:hidden;line-height:0;">
+        <iframe
+          title="Up In Smoke location map"
+          src="https://maps.google.com/maps?q=1862+Muskoka+Road+38,+Bala,+ON+P0C+1A0&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="360"
+          style="border:0;filter:invert(90%) hue-rotate(180deg) saturate(0.6);"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div style="margin-top:1rem;display:flex;justify-content:center;">
+        <a
+          href="https://maps.google.com/?q=1862+Muskoka+Road+38+Bala+ON"
+          target="_blank"
+          rel="noopener"
+          class="btn-fill"
+          style="font-size:0.8rem;"
+        >Get Directions</a>
+      </div>
+    </div>
+
     <!-- sign photo -->
-    <div class="visit-signpost reveal" style="margin-top:5rem;">
+    <div class="visit-signpost reveal" style="margin-top:3rem;">
       <img
         src="up%20in%20smoke%20sign.jpg"
         alt="Up In Smoke roadside sign on Wahta Mohawk Territory"
@@ -1332,14 +1473,31 @@
     <div class="footer-rule" aria-hidden="true"></div>
 
     <p class="footer-copy">
-      Up In Smoke · Wahta Mohawk Territory, Ontario, Canada
-      <br>© 2025 Up In Smoke. All rights reserved.
+      1862 Muskoka Road 38 · Bala, ON P0C 1A0 · Canada<br>
+      <a href="tel:+17057689003" style="color:inherit;text-decoration:none;">(705) 768-9003</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:upinsmoke1862@gmail.com" style="color:inherit;text-decoration:none;">upinsmoke1862@gmail.com</a>
+    </p>
+    <p class="footer-copy" style="margin-top:-0.5rem;">
+      © 2025 Up In Smoke. All rights reserved.
     </p>
     <p class="footer-legal">
-      Must be of legal age to purchase tobacco, vaping, and smoking products.
+      Must be of legal age to purchase tobacco and smoking products.
     </p>
   </div>
 </footer>
+
+<!-- ══ FLOATING BUTTONS ══ -->
+<a id="fab-call" href="tel:+17057689003" aria-label="Call Up In Smoke">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15A16 16 0 0015.1 16.34l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+  </svg>
+</a>
+<a id="back-top" href="#" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</a>
 
 <script>
   // ── Navbar scroll ──
@@ -1368,6 +1526,19 @@
   hamBtn.addEventListener('click', openDrawer);
   drawerClose.addEventListener('click', closeDrawer);
   drawerEl.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  // ── Floating buttons visibility ──
+  const fabCall = document.getElementById('fab-call');
+  const backTop = document.getElementById('back-top');
+  window.addEventListener('scroll', () => {
+    const past = window.scrollY > 400;
+    fabCall.classList.toggle('show', past);
+    backTop.classList.toggle('show', past);
+  }, { passive: true });
+  backTop.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   // ── Scroll reveal ──
   const revealEls = document.querySelectorAll('.reveal');
