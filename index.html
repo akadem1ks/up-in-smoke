@@ -1071,6 +1071,158 @@
 
 <div class="divider"></div>
 
+<!-- ══ TESTIMONIALS ══ -->
+<section id="testimonials" aria-labelledby="testimonials-heading" style="background:var(--navy-mid); padding:7rem 0; position:relative; overflow:hidden;">
+
+  <!-- ambient glow -->
+  <div aria-hidden="true" style="position:absolute;top:-120px;left:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(200,72,46,0.05) 0%,transparent 70%);pointer-events:none;"></div>
+
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <p class="section-eyebrow">Happy Customers</p>
+      <h2 class="section-title" id="testimonials-heading">What People<br>Are Saying</h2>
+      <div class="section-rule" style="margin:1.4rem auto;"></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem;" class="testimonials-grid">
+
+      <figure class="tcard reveal d1">
+        <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="tcard-quote">
+          "Best smoke shop in the area — hands down. Great selection, great prices, and the staff always know exactly what you're looking for. Never leaving without what I came for."
+        </blockquote>
+        <figcaption class="tcard-author">
+          <span class="tcard-name">Mike R.</span>
+          <span class="tcard-loc">Bala, ON</span>
+        </figcaption>
+      </figure>
+
+      <figure class="tcard reveal d2">
+        <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="tcard-quote">
+          "Super friendly and welcoming every single time. Love that it's a local, community-run shop. The prices are unbeatable and they always have everything stocked."
+        </blockquote>
+        <figcaption class="tcard-author">
+          <span class="tcard-name">Sarah T.</span>
+          <span class="tcard-loc">Gravenhurst, ON</span>
+        </figcaption>
+      </figure>
+
+      <figure class="tcard reveal d3">
+        <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="tcard-quote">
+          "I drive out of my way just to come here. Amazing variety of papers, wraps, and accessories. The team is super knowledgeable and never makes you feel rushed."
+        </blockquote>
+        <figcaption class="tcard-author">
+          <span class="tcard-name">Jordan K.</span>
+          <span class="tcard-loc">Bracebridge, ON</span>
+        </figcaption>
+      </figure>
+
+      <figure class="tcard reveal d2">
+        <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="tcard-quote">
+          "Stopped in on a road trip and was blown away. Huge selection of vapes and the prices are way better than anywhere in the city. Will definitely be back next time I'm up north."
+        </blockquote>
+        <figcaption class="tcard-author">
+          <span class="tcard-name">Chris M.</span>
+          <span class="tcard-loc">Toronto, ON</span>
+        </figcaption>
+      </figure>
+
+      <figure class="tcard reveal d3">
+        <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="tcard-quote">
+          "Genuinely one of the friendliest shops I've ever been to. They took the time to help me find the right tobacco blend and even made some great recommendations. 10/10."
+        </blockquote>
+        <figcaption class="tcard-author">
+          <span class="tcard-name">Dave L.</span>
+          <span class="tcard-loc">Parry Sound, ON</span>
+        </figcaption>
+      </figure>
+
+      <figure class="tcard reveal d4">
+        <div class="tcard-stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="tcard-quote">
+          "Love supporting a local Mohawk Territory business. Always clean, well-stocked, and the staff genuinely care about their customers. This is my go-to spot, always."
+        </blockquote>
+        <figcaption class="tcard-author">
+          <span class="tcard-name">Amanda F.</span>
+          <span class="tcard-loc">Wahta, ON</span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .tcard {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 2.2rem 2rem;
+    position: relative;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .tcard:hover {
+    border-color: rgba(200,72,46,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.28), 0 0 0 1px rgba(200,72,46,0.1);
+  }
+  .tcard-stars {
+    color: var(--red);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.1rem;
+  }
+  .tcard-quote {
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: var(--cream-dim);
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 1.6rem;
+  }
+  .tcard-quote::before {
+    content: '\201C';
+    font-family: var(--font-script);
+    font-size: 2.2rem;
+    color: rgba(200,72,46,0.35);
+    line-height: 0;
+    vertical-align: -0.5rem;
+    margin-right: 0.15rem;
+  }
+  .tcard-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .tcard-name {
+    font-family: var(--font-condensed);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .tcard-loc {
+    font-size: 0.78rem;
+    color: var(--cream-ghost);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+  @media (max-width: 900px) {
+    .testimonials-grid { grid-template-columns: repeat(2,1fr) !important; }
+  }
+  @media (max-width: 560px) {
+    .testimonials-grid { grid-template-columns: 1fr !important; }
+  }
+</style>
+
+<div class="divider"></div>
+
 <!-- ══ VISIT ══ -->
 <section id="visit" aria-labelledby="visit-heading">
   <div class="visit-bg" aria-hidden="true"></div>
