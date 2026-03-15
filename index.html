@@ -258,9 +258,10 @@
     .nav-logo img {
       height: 54px;
       width: auto;
-      transition: height 0.4s ease;
+      opacity: 0;
+      transition: height 0.4s ease, opacity 0.4s ease;
     }
-    #nav.solid .nav-logo img { height: 42px; }
+    #nav.solid .nav-logo img { height: 42px; opacity: 1; }
 
     .nav-links {
       display: flex;
